@@ -1,0 +1,3 @@
+const Delete = {
+  remove(id) {}
+};

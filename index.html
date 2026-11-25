@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Estudiantes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="panel">
+      <div class="brand">
+        <h1>Gestor de<br>Estudiantes</h1>
+        <p>Registro académico · Programación III</p>
+      </div>
+
+      <form id="form-estudiante" novalidate>
+        <h2 id="form-title">Nuevo estudiante</h2>
+        <label>Nombre completo
+          <input type="text" id="nombre" placeholder="María Pérez">
+        </label>
+        <label>Correo electrónico
+          <input type="email" id="correo" placeholder="maria@correo.com">
+        </label>
+        <label>Carrera
+          <select id="carrera">
+            <option value="">Selecciona una carrera</option>
+            <option>Desarrollo de Software</option>
+            <option>Redes de Información</option>
+            <option>Seguridad Informática</option>
+            <option>Multimedia</option>
+            <option>Ciencia de Datos</option>
+          </select>
+        </label>
+        <ul id="errores" class="errores" aria-live="polite"></ul>
+        <div class="acciones">
+          <button type="submit" id="btn-guardar" class="btn primary">Guardar</button>
+          <button type="button" id="btn-cancelar" class="btn ghost" hidden>Cancelar</button>
+        </div>
+      </form>
+    </aside>
+
+    <main class="registro">
+      <div class="registro-head">
+        <h2>Estudiantes registrados</h2>
+        <input type="search" id="buscar" placeholder="Buscar por nombre, correo o carrera">
+      </div>
+      <div class="tabla-wrap">
+        <table>
+          <thead>
+            <tr><th>Nombre</th><th>Correo</th><th>Carrera</th><th class="col-acc">Acciones</th></tr>
+          </thead>
+          <tbody id="tabla-body"></tbody>
+        </table>
+      </div>
+      <p id="vacio" class="vacio" hidden>Aún no hay estudiantes. Completa el formulario para registrar el primero.</p>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="js/validate.js"></script>
+  <script src="js/create.js"></script>
+  <script src="js/read.js"></script>
+  <script src="js/update.js"></script>
+  <script src="js/delete.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
